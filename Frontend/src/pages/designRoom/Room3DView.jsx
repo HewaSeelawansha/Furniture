@@ -297,15 +297,6 @@ function Room3D({ room, furniture = [], onBack }) {
             >
               Cancel
             </button>
-            {/* <button
-              className="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700"
-              onClick={(e) => {
-                e.stopPropagation();
-                applyColors();
-              }}
-            >
-              Apply
-            </button> */}
           </div>
         </div>
       )}
@@ -334,7 +325,7 @@ export default function Room3DView() {
     const defaultConfig = { 
       width: 5, 
       height: 5, 
-      color: "#3b82f6", // Blue color
+      color: "#3b82f6", 
       name: "Default Room",
       shape: "rectangle",
       furniture: [] 
@@ -358,34 +349,27 @@ export default function Room3DView() {
   const handleDownloadPDF = async () => {
     setIsGeneratingPDF(true);
     try {
-      // Get the Three.js canvas
       const canvas = document.querySelector('canvas');
       
-      // Wait for the next frame to ensure rendering is complete
       await new Promise(resolve => requestAnimationFrame(resolve));
       
-      // Create a temporary canvas to handle potential WebGL context issues
       const tempCanvas = document.createElement('canvas');
       tempCanvas.width = canvas.width;
       tempCanvas.height = canvas.height;
       const tempCtx = tempCanvas.getContext('2d');
       
-      // Draw the WebGL content to the 2D canvas
       tempCtx.fillStyle = 'white';
       tempCtx.fillRect(0, 0, tempCanvas.width, tempCanvas.height);
       tempCtx.drawImage(canvas, 0, 0);
       
-      // Create PDF
       const pdf = new jsPDF({
         orientation: 'landscape',
         unit: 'mm'
       });
       
-      // Calculate dimensions
-      const imgWidth = 280; // A4 width in mm (landscape)
+      const imgWidth = 280; // A4 width
       const imgHeight = (tempCanvas.height / tempCanvas.width) * imgWidth;
       
-      // Format current date and time
       const now = new Date();
       const formattedDateTime = now.toLocaleString('en-US', {
         year: 'numeric',
@@ -396,15 +380,13 @@ export default function Room3DView() {
         second: '2-digit'
       }).replace(/,/g, '').replace(/\//g, '-');
       
-      // Layout constants
-      const topMargin = 10; // Top margin for the title
+      const topMargin = 10;
       const titleFontSize = 18;
       const detailsFontSize = 12;
       const dateFontSize = 10;
-      const lineSpacing = 5; // Space between title and details
-      const bottomMargin = 15; // Bottom margin for the date
+      const lineSpacing = 5; 
+      const bottomMargin = 15; 
       
-      // Add title at the top
       pdf.setFontSize(titleFontSize);
       pdf.setTextColor(0, 0, 0);
       pdf.text(roomConfig.name, pdf.internal.pageSize.getWidth() / 2, topMargin, { 
@@ -412,29 +394,25 @@ export default function Room3DView() {
         baseline: 'top'
       });
       
-      // Add room details below title with spacing
       pdf.setFontSize(detailsFontSize);
       pdf.text(
         `Size: ${roomConfig.width}m × ${roomConfig.height}m | Shape: ${roomConfig.shape}`,
         pdf.internal.pageSize.getWidth() / 2,
-        topMargin + titleFontSize / 2 + lineSpacing, // Position below title
+        topMargin + titleFontSize / 2 + lineSpacing, 
         { align: 'center' }
       );
       
-      // Calculate image position (below details with some spacing)
       const imageTopPosition = topMargin + titleFontSize / 2 + detailsFontSize / 2 + lineSpacing * 2;
       
-      // Add image (centered)
       pdf.addImage(
         tempCanvas.toDataURL('image/png'), 
         'PNG', 
-        10, // x position (left margin)
+        10, 
         imageTopPosition,
         imgWidth, 
         imgHeight
       );
       
-      // Add date and time at bottom right with margin
       pdf.setFontSize(dateFontSize);
       pdf.text(
         `Generated: ${formattedDateTime}`,

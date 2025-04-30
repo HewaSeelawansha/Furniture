@@ -39,17 +39,14 @@ const ManageReservations = () => {
     return (
         <div className="min-h-screen bg-gray-50">
             <div className="">
-                {/* Page Header */}
                 <div className="mb-8">
                     <h1 className="text-3xl font-bold text-gray-900">Reservation Management</h1>
                     <p className="mt-2 text-lg text-gray-600">View and manage all reservations</p>
                 </div>
 
-                {/* Single Column Layout */}
                 <div className="space-y-6">
                     {reservations.map((reservation) => (
                         <div key={reservation._id} className="bg-white rounded-xl shadow-lg overflow-hidden w-full">
-                            {/* Reservation Header */}
                             <div className="bg-gradient-to-r from-blue-600 to-blue-500 px-6 py-4">
                                 <div className="flex justify-between items-center">
                                     <div>
@@ -69,9 +66,7 @@ const ManageReservations = () => {
                                 </div>
                             </div>
 
-                            {/* Card Content - Two Column Layout Inside */}
                             <div className="p-6 grid grid-cols-1 md:grid-cols-3 gap-6">
-                                {/* Left Column - Details */}
                                 <div className="space-y-4">
                                     <div className="bg-gray-50 p-4 rounded-lg">
                                         <h3 className="text-sm font-medium text-gray-700 mb-2">Address</h3>
@@ -95,7 +90,6 @@ const ManageReservations = () => {
                                     </div>
                                 </div>
 
-                                {/* Middle Column - Payment Status */}
                                 <div className="space-y-4">
                                     <div className="bg-gray-50 p-4 rounded-lg h-full">
                                         <h3 className="text-sm font-medium text-gray-700 mb-3">Payment Information</h3>
@@ -140,7 +134,6 @@ const ManageReservations = () => {
                                     </div>
                                 </div>
 
-                                {/* Right Column - Actions */}
                                 <div className="space-y-4">
                                     <div className="bg-blue-50 p-4 rounded-lg">
                                         <h3 className="text-sm font-medium text-blue-800 mb-2">Update Status</h3>

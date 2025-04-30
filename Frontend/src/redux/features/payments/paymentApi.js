@@ -16,23 +16,20 @@ const baseQuery = fetchBaseQuery({
 const paymentsApi = createApi({
     reducerPath: 'paymentsApi',
     baseQuery,
-    tagTypes: ['Payments', 'Reservations'], // Include Reservations tag to invalidate reservation cache
+    tagTypes: ['Payments', 'Reservations'], 
     endpoints: (builder) => ({
-        // Process payment for a reservation
         processPayment: builder.mutation({
             query: ({ reservationId, paymentMethod = 'card' }) => ({
                 url: `/${reservationId}/process`,
                 method: 'POST',
                 body: { paymentMethod }
             }),
-            // Invalidate both Payments and Reservations since we update both
             invalidatesTags: (result, error, { reservationId }) => [
                 { type: 'Payments', id: reservationId },
                 { type: 'Reservations', id: reservationId }
             ],
         }),
 
-        // Get payment history for a reservation
         getPaymentsByReservation: builder.query({
             query: (reservationId) => `/${reservationId}`,
             providesTags: (result, error, reservationId) => [
@@ -42,7 +39,6 @@ const paymentsApi = createApi({
     })
 });
 
-// Export hooks for usage in components
 export const {
     useProcessPaymentMutation,
     useGetPaymentsByReservationQuery,

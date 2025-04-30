@@ -12,20 +12,17 @@ const Furniture = () => {
   return (
     <div className="min-h-screen bg-gray-50">
       <div className="w-full">
-        {/* Page Header */}
         <div className="mb-8">
           <h1 className="text-3xl font-bold text-gray-900">Our Furniture Collection</h1>
           <p className="mt-2 text-lg text-gray-600">Discover our premium selection of furniture</p>
         </div>
 
-        {/* Furniture Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
           {furnitures.map((item) => (
             <div 
               key={item._id} 
               className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300"
             >
-              {/* Furniture Image */}
               <div className="h-64 overflow-hidden">
                 <img
                   src={item?.Image || 'https://i.ibb.co/tPJnyqL1/btmn.jpg'}
@@ -34,7 +31,6 @@ const Furniture = () => {
                 />
               </div>
 
-              {/* Furniture Details */}
               <div className="p-6">
                 <div className="flex justify-between items-start mb-2">
                   <h2 className="text-xl font-bold text-gray-900 line-clamp-1">{item.title}</h2>
@@ -61,7 +57,6 @@ const Furniture = () => {
           ))}
         </div>
 
-        {/* Empty State */}
         {furnitures.length === 0 && (
           <div className="text-center py-12">
             <h3 className="text-xl font-medium text-gray-500">No furniture available at the moment</h3>

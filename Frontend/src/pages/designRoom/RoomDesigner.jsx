@@ -82,16 +82,13 @@ function RoomDesigner() {
   return (
     <div className="min-h-screen bg-gray-50 ">
       <div className="">
-        {/* Main Card */}
         <div className="bg-white rounded-xl shadow-lg overflow-hidden">
-          {/* Header Section */}
           <div className="bg-blue-600 px-6 py-4">
             <h1 className="text-2xl font-bold text-white">Room Designer</h1>
             <p className="text-blue-100">Create and customize your perfect room layout</p>
           </div>
 
           <div className="p-6 space-y-6">
-            {/* Load Design Section */}
             <div className="flex flex-col sm:flex-row gap-4 items-center">
               <select 
                 className="flex-grow px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500"
@@ -121,7 +118,6 @@ function RoomDesigner() {
               </button>
             </div>
 
-            {/* Room Settings Section */}
             <div className="border border-gray-200 rounded-lg p-6">
               <h2 className="text-xl font-bold text-gray-900 mb-4">Room Settings</h2>
               
@@ -205,7 +201,6 @@ function RoomDesigner() {
               </div>
             </div>
 
-            {/* Add Furniture Section */}
             <div className="border border-gray-200 rounded-lg p-6">
               <h2 className="text-xl font-bold text-gray-900 mb-4">Add Furniture</h2>
               
@@ -295,7 +290,6 @@ function RoomDesigner() {
               </button>
             </div>
 
-            {/* Current Furniture List */}
             <div className="border border-gray-200 rounded-lg p-6">
               <h2 className="text-xl font-bold text-gray-900 mb-4">
                 Current Furniture ({roomConfig.furniture.length})
@@ -337,7 +331,6 @@ function RoomDesigner() {
               )}
             </div>
 
-            {/* Action Buttons */}
             <div className="flex flex-col sm:flex-row gap-4">
               <button
                 className="flex-grow bg-green-600 text-white py-3 px-6 rounded-md hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 text-lg font-semibold"

@@ -21,12 +21,10 @@ const authSlice = createSlice({
     name: 'auth',
     initialState,
     reducers: {
-        // Action to start loading during async login/logout
         setLoading: (state) => {
             state.loading = true;
         },
 
-        // Action to set user and token after successful login
         setUser: (state, action) => {
             state.user = action.payload.user;
             state.token = action.payload.token;
@@ -43,7 +41,6 @@ const authSlice = createSlice({
             });
         },
 
-        // Action to remove user and token after logout
         logout: (state) => {
             state.user = null;
             state.token = null;
@@ -60,7 +57,6 @@ const authSlice = createSlice({
             });
         },
 
-        // Action to handle authentication errors
         setError: (state, action) => {
             state.error = action.payload;
             state.loading = false;
@@ -73,12 +69,10 @@ const authSlice = createSlice({
             });
         },
 
-        // Action to clear the authentication error
         clearError: (state) => {
             state.error = null;
         },
 
-        // Action to reset authentication state (optional)
         resetAuthState: (state) => {
             state.user = null;
             state.token = null;

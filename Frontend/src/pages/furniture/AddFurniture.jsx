@@ -55,17 +55,13 @@ const AddFurniture = () => {
     return (
         <div className="min-h-screen bg-gray-50">
             <div className="">
-                {/* Form Card */}
                 <div className="bg-white rounded-xl shadow-lg overflow-hidden">
-                    {/* Form Header */}
                     <div className="bg-blue-600 px-6 py-4">
                         <h1 className="text-2xl font-bold text-white">Add New Furniture</h1>
                         <p className="text-indigo-100">Fill in the details below to add a new furniture item</p>
                     </div>
 
-                    {/* Form Content */}
                     <form onSubmit={handleSubmit(onSubmit)} className="p-6 space-y-6">
-                        {/* Title Field */}
                         <div>
                             <label htmlFor="title" className="block text-sm font-medium text-gray-700 mb-1">
                                 Title
@@ -82,7 +78,6 @@ const AddFurniture = () => {
                             )}
                         </div>
 
-                        {/* Description Field */}
                         <div>
                             <label htmlFor="description" className="block text-sm font-medium text-gray-700 mb-1">
                                 Description
@@ -99,7 +94,6 @@ const AddFurniture = () => {
                             )}
                         </div>
 
-                        {/* Image Upload */}
                         <div>
                             <label htmlFor="image" className="block text-sm font-medium text-gray-700 mb-1">
                                 Furniture Image
@@ -126,9 +120,7 @@ const AddFurniture = () => {
                             </div>
                         </div>
 
-                        {/* Price and Stock Fields */}
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            {/* Price Field */}
                             <div>
                                 <label htmlFor="price" className="block text-sm font-medium text-gray-700 mb-1">
                                     Price ($)
@@ -154,7 +146,6 @@ const AddFurniture = () => {
                                 )}
                             </div>
 
-                            {/* Stock Field */}
                             <div>
                                 <label htmlFor="stock" className="block text-sm font-medium text-gray-700 mb-1">
                                     Stock Quantity
@@ -175,7 +166,6 @@ const AddFurniture = () => {
                             </div>
                         </div>
 
-                        {/* Form Actions */}
                         <div className="flex justify-end space-x-4 pt-4">
                             <button
                                 type="button"

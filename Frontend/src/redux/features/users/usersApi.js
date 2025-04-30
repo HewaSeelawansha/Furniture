@@ -5,9 +5,9 @@ const baseQuery = fetchBaseQuery({
     baseUrl: `${getBaseUrl()}/auth`,
     credentials: 'include',
     prepareHeaders: (headers) => {
-        const token = localStorage.getItem('token'); // Get token from localStorage
+        const token = localStorage.getItem('token'); 
         if (token) {
-            headers.set('Authorization', `Bearer ${token}`); // Add Bearer token to headers
+            headers.set('Authorization', `Bearer ${token}`); 
         }
         return headers;
     },
@@ -56,7 +56,7 @@ const usersApi = createApi({
         updateUser: builder.mutation({
             query: ({ id, updatedData }) => ({
                 url: `/update/${id}`,
-                method: 'PUT', // or 'PATCH', depending on your backend
+                method: 'PUT', 
                 body: updatedData,
             }),
             invalidatesTags: (result, error, { id }) => [{ type: 'Users', id }],

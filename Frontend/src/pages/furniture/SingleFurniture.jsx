@@ -13,17 +13,13 @@ const SingleFurniture = () => {
   return (
     <div className="w-full min-h-screen bg-gray-50">
       <div className="w-full">
-        {/* Main Card */}
         <div className="bg-white rounded-xl shadow-lg overflow-hidden">
-          {/* Product Header */}
           <div className="p-6 sm:p-8 border-b border-gray-200">
             <h1 className="text-3xl font-bold text-gray-900">{furniture?.title}</h1>
             <p className="mt-2 text-lg text-gray-600">{furniture?.description}</p>
           </div>
 
-          {/* Product Content */}
           <div className="md:flex">
-            {/* Image Section */}
             <div className="md:w-1/2 p-6">
               <div className="aspect-w-1 aspect-h-1 w-full overflow-hidden rounded-lg bg-gray-100">
                 <img 
@@ -34,9 +30,7 @@ const SingleFurniture = () => {
               </div>
             </div>
 
-            {/* Details Section */}
             <div className="md:w-1/2 p-6 flex flex-col">
-              {/* Price and Stock */}
               <div className="mb-8">
                 <div className="flex items-center justify-between">
                   <span className="text-3xl font-bold text-gray-900">${furniture?.price}</span>
@@ -47,7 +41,6 @@ const SingleFurniture = () => {
                 <p className="mt-2 text-gray-500">{furniture?.stock} units available</p>
               </div>
 
-              {/* Additional Info */}
               <div className="space-y-4">
                 <div className="p-4 bg-gray-50 rounded-lg">
                   <h3 className="text-sm font-medium text-gray-900">Product Details</h3>
@@ -69,7 +62,6 @@ const SingleFurniture = () => {
                   </div>
                 </div>
 
-                {/* Action Buttons */}
                 <div className="flex space-x-4 pt-4">
                   <button className="flex-1 bg-blue-600 py-3 px-8 border border-transparent rounded-md text-white font-medium hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
                   onClick={() => navigate('/reservation')}
@@ -87,7 +79,6 @@ const SingleFurniture = () => {
           </div>
         </div>
 
-        {/* Description Section */}
         <div className="mt-8 bg-white rounded-xl shadow-lg overflow-hidden">
           <div className="p-6 sm:p-8">
             <h2 className="text-xl font-bold text-gray-900 mb-4">Description</h2>

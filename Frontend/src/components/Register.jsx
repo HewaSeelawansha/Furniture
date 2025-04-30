@@ -21,7 +21,6 @@ const Signup = () => {
             email: data.email, 
             password: data.password
         };
-        console.log('User data:', userData); // Log the user data
 
         const signupResponse = await signupUser(userData).unwrap();
         if (signupResponse.success) {

@@ -4,7 +4,7 @@ import Register from "../components/Register";
 import PrivateRoute from "./PrivateRoute";
 import App from "../App";
 import UserGuide from "../components/UserGuide";
-import RoomDesigner from "../pages/designRoom/roomDesigner";
+import RoomDesigner from "../pages/designRoom/RoomDesigner";
 import Room2DView from "../pages/designRoom/Room2DView";
 import Room3DView from "../pages/designRoom/Room3DView";
 import Furniture from "../pages/furniture/Furniture";

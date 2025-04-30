@@ -34,10 +34,8 @@ const Reservation = () => {
     
     const onSubmit = async (data) => {
         try {
-            // Combine address fields
             const address = `${data.houseNumber}, ${data.street}, ${data.state}, ${data.zipcode}`;
             
-            // Prepare furniture items array
             const furnitureItems = Object.entries(selectedFurniture)
                 .filter(([_, quantity]) => quantity > 0)
                 .map(([itemId, quantity]) => ({ itemId, quantity }));
@@ -47,7 +45,6 @@ const Reservation = () => {
                 return;
             }
 
-            // Calculate totals
             const totalQuantity = Object.values(selectedFurniture).reduce((sum, qty) => sum + qty, 0);
             const totalPrice = Object.entries(selectedFurniture)
                 .filter(([_, qty]) => qty > 0)
@@ -84,17 +81,13 @@ const Reservation = () => {
     return (
         <div className="min-h-screen bg-gray-50">
             <div className="">
-                {/* Form Card */}
                 <div className="bg-white rounded-xl shadow-lg overflow-hidden">
-                    {/* Form Header */}
                     <div className="bg-blue-600 px-6 py-4">
                         <h1 className="text-2xl font-bold text-white">Make a New Reservation</h1>
                         <p className="text-indigo-100">Fill in the details below to make a new reservation</p>
                     </div>
         
-                    {/* Form Content */}
                     <form onSubmit={handleSubmit(onSubmit)} className="p-6 space-y-6">
-                        {/* Customer Name Field */}
                         <div>
                             <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
                                 Customer Name
@@ -111,13 +104,11 @@ const Reservation = () => {
                             )}
                         </div>
         
-                        {/* Address Fields */}
                         <div>
                             <label className="block text-sm font-medium text-gray-700 mb-2">
                                 Address
                             </label>
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                                {/* House/No. Field */}
                                 <div>
                                     <label htmlFor="houseNumber" className="block text-sm text-gray-600 mb-1">
                                         House / No.
@@ -134,7 +125,6 @@ const Reservation = () => {
                                     )}
                                 </div>
         
-                                {/* Street Field */}
                                 <div>
                                     <label htmlFor="street" className="block text-sm text-gray-600 mb-1">
                                         Street
@@ -151,7 +141,6 @@ const Reservation = () => {
                                     )}
                                 </div>
         
-                                {/* State Field */}
                                 <div>
                                     <label htmlFor="state" className="block text-sm text-gray-600 mb-1">
                                         State
@@ -168,7 +157,6 @@ const Reservation = () => {
                                     )}
                                 </div>
         
-                                {/* Zipcode Field */}
                                 <div>
                                     <label htmlFor="zipcode" className="block text-sm text-gray-600 mb-1">
                                         Zip Code
@@ -187,7 +175,6 @@ const Reservation = () => {
                             </div>
                         </div>
         
-                        {/* NIC Field */}
                         <div>
                             <label htmlFor="nic" className="block text-sm font-medium text-gray-700 mb-1">
                                 NIC
@@ -204,13 +191,11 @@ const Reservation = () => {
                             )}
                         </div>
         
-                        {/* Furniture Selection */}
                         <div>
                             <label className="block text-sm font-medium text-gray-700 mb-2">
                                 Select Furniture
                             </label>
                             
-                            {/* Furniture Horizontal Scroll */}
                             <div className="relative">
                                 <div className="flex overflow-x-auto pb-4 space-x-4 scrollbar-hide">
                                     {furnitures.map((item) => (
@@ -260,7 +245,6 @@ const Reservation = () => {
                                 </div>
                             </div>
             
-                            {/* Selected Items Summary */}
                             {Object.keys(selectedFurniture).filter(id => selectedFurniture[id] > 0).length > 0 && (
                                 <div className="mt-4 p-3 bg-gray-50 rounded-md">
                                     <h4 className="text-sm font-medium text-gray-700 mb-2">Selected Items:</h4>
@@ -281,9 +265,7 @@ const Reservation = () => {
                             )}
                         </div>
         
-                        {/* Total and Actions Container */}
                         <div className="flex flex-col space-y-4 pt-4">
-                            {/* Total Price and Quantity Row */}
                             <div className="flex justify-between items-center">
                                 <div className="text-2xl font-semibold text-gray-800">
                                     Total Quantity: <span className="text-blue-600">
@@ -303,7 +285,6 @@ const Reservation = () => {
                                 </div>
                             </div>
         
-                            {/* Form Actions */}
                             <div className="flex justify-end space-x-4">
                                 <button
                                     type="button"

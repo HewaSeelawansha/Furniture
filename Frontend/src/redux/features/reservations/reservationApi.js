@@ -18,7 +18,6 @@ const reservationsApi = createApi({
     baseQuery,
     tagTypes: ['Reservations'],
     endpoints: (builder) => ({
-        // Get all reservations
         fetchAllReservations: builder.query({
             query: () => '/',
             providesTags: (result) =>
@@ -27,7 +26,6 @@ const reservationsApi = createApi({
                     : [{ type: 'Reservations' }],
         }),
 
-        // Get reservations by NIC
         fetchReservationsByNIC: builder.query({
             query: (nic) => `/nic/${nic}`,
             providesTags: (result) =>
@@ -41,7 +39,6 @@ const reservationsApi = createApi({
             providesTags: (result, error, id) => [{ type: 'Reservations', id }],
         }),
 
-        // Create new reservation
         addReservation: builder.mutation({
             query: (reservationData) => ({
                 url: '/create',
@@ -51,7 +48,6 @@ const reservationsApi = createApi({
             invalidatesTags: ['Reservations']
         }),
 
-        // Update reservation status
         updateReservationStatus: builder.mutation({
             query: ({ id, status }) => ({
                 url: `/update-status/${id}`,
@@ -63,7 +59,6 @@ const reservationsApi = createApi({
     })
 });
 
-// Export hooks for usage in components
 export const {
     useFetchAllReservationsQuery,
     useFetchReservationsByNICQuery,

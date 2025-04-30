@@ -16,7 +16,6 @@ const PaymentGateway = () => {
   const [isProcessing, setIsProcessing] = useState(false);
   const [paymentSuccess, setPaymentSuccess] = useState(false);
   
-  // Fetch reservation details
   const { data: reservation, isLoading } = useFetchReservationByIdQuery(reservationId);
   const [processPayment] = useProcessPaymentMutation();
 
@@ -38,7 +37,6 @@ const PaymentGateway = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     
-    // Validation for card payments only
     if (paymentMethod === 'card') {
       if (!cardNumber || cardNumber.length < 12) {
         handleError('Please enter a valid card number');
@@ -57,7 +55,6 @@ const PaymentGateway = () => {
     setIsProcessing(true);
     
     try {
-      // Process payment through API
       const paymentData = {
         reservationId,
         paymentMethod,
@@ -118,7 +115,6 @@ const PaymentGateway = () => {
   return (
     <div className="min-h-screen bg-gray-50 flex items-center justify-center p-4">
       <div className="bg-white rounded-xl shadow-lg overflow-hidden w-full max-w-md">
-        {/* Payment Header */}
         <div className="bg-blue-600 px-6 py-4 flex items-center">
           <button 
             onClick={() => navigate(-1)}
@@ -132,9 +128,7 @@ const PaymentGateway = () => {
           </div>
         </div>
 
-        {/* Payment Form */}
         <form onSubmit={handleSubmit} className="p-6 space-y-6">
-          {/* Payment Method Selection */}
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-2">Payment Method</label>
             <div className="flex space-x-4">
@@ -163,7 +157,6 @@ const PaymentGateway = () => {
 
           {paymentMethod === 'card' ? (
             <>
-              {/* Card Number */}
               <div>
                 <label htmlFor="cardNumber" className="block text-sm font-medium text-gray-700 mb-1">
                   Card Number
@@ -186,7 +179,6 @@ const PaymentGateway = () => {
                 <p className="mt-1 text-xs text-gray-500">Enter any 12-16 digit number for this prototype</p>
               </div>
 
-              {/* Card Name */}
               <div>
                 <label htmlFor="cardName" className="block text-sm font-medium text-gray-700 mb-1">
                   Name on Card
@@ -202,7 +194,6 @@ const PaymentGateway = () => {
                 />
               </div>
 
-              {/* Expiry and CVC */}
               <div className="grid grid-cols-2 gap-4">
                 <div>
                   <label htmlFor="expiry" className="block text-sm font-medium text-gray-700 mb-1">
@@ -261,7 +252,6 @@ const PaymentGateway = () => {
             </div>
           )}
 
-          {/* Submit Button */}
           <button
             type="submit"
             disabled={isProcessing || !reservation}
@@ -286,7 +276,6 @@ const PaymentGateway = () => {
             )}
           </button>
 
-          {/* Security Info - Only show for card payments */}
           {paymentMethod === 'card' && (
             <div className="flex items-center justify-center text-xs text-gray-500">
               <FaLock className="mr-1" />

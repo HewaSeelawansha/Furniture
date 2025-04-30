@@ -85,29 +85,26 @@ function Room2DView() {
         />
       );
     } else {
-      // L-Shaped Room that fills the entire container
       return (
         <div className="absolute inset-0" onClick={handleRoomClick}>
-          {/* Vertical part of L (full height) */}
           <div 
             className="absolute"
             style={{
-              width: `${width/2}px`, // Half the width
-              height: `${height}px`, // Full height
+              width: `${width/2}px`, 
+              height: `${height}px`, 
               backgroundColor: color,
               left: 0,
               top: 0
             }}
           />
-          {/* Horizontal part of L (full width) */}
           <div 
             className="absolute"
             style={{
-              width: `${width*2}px`, // Full width
-              height: `${height/2}px`, // Half the height
+              width: `${width*2}px`, 
+              height: `${height/2}px`, 
               backgroundColor: color,
               left: 0,
-              bottom: 0 // Changed from top: 0 to bottom: 0
+              bottom: 0 
             }}
           />
         </div>
@@ -240,10 +237,6 @@ function Room2DView() {
                     Apply
                   </button>
                 </div>
-                
-                {/* <p className="text-sm mt-2 text-center text-gray-600">
-                  {editingRoom ? 'Editing Room Color' : `Editing ${currentRoomConfig.furniture[selectedItem]?.type}`}
-                </p> */}
               </div>
             )}
 
