@@ -436,7 +436,6 @@ export default function Room3DView() {
     <div className="bg-gray-50">
       <div className="">
       <div className="bg-white rounded-xl shadow-lg overflow-hidden">
-          {/* Header Section */}
           <div className="bg-blue-600 px-6 py-4 flex justify-between items-center">
             <div>
               <h1 className="text-2xl font-bold text-white">3D Room Visualization</h1>
