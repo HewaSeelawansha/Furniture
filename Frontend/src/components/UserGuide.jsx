@@ -23,7 +23,7 @@ const UserGuide = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
           {/* Room Designer Card */}
-          <div className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+          <div className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-2xl transition-shadow duration-300">
             <div className="h-[290px] bg-gradient-to-r from-blue-400 to-indigo-600 flex items-center justify-center">
               <img 
                 src={ug3} 
@@ -58,7 +58,7 @@ const UserGuide = () => {
           </div>
 
           {/* Furniture Gallery Card */}
-          <div className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+          <div className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-2xl transition-shadow duration-300">
             <div className="h-[290px] bg-gradient-to-r from-amber-400 to-orange-500 flex items-center justify-center">
               <img 
                 src={ug2}
@@ -93,7 +93,7 @@ const UserGuide = () => {
           </div>
 
           {/* Reservations Card */}
-          <div className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+          <div className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-2xl transition-shadow duration-300">
             <div className="h-[290px] bg-gradient-to-r from-green-400 to-teal-600 flex items-center justify-center">
               <img 
                 src={ug1}
@@ -128,7 +128,7 @@ const UserGuide = () => {
           </div>
 
           {/* Make Reservation Card */}
-          <div className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+          <div className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-2xl transition-shadow duration-300">
             <div className="h-[290px] bg-gradient-to-r from-purple-400 to-pink-600 flex items-center justify-center">
               <img 
                 src={ug5}
@@ -163,7 +163,7 @@ const UserGuide = () => {
           </div>
 
           {/* PDF Export Card */}
-          <div className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+          <div className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-2xl transition-shadow duration-300">
             <div className="h-[290px] bg-gradient-to-r from-cyan-400 to-blue-600 flex items-center justify-center">
               <img 
                 src={ug6}
@@ -200,7 +200,7 @@ const UserGuide = () => {
           </div>
 
           {/* Add Furniture Card */}
-          <div className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+          <div className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-2xl transition-shadow duration-300">
             <div className="h-[290px] bg-gradient-to-r from-red-400 to-yellow-500 flex items-center justify-center">
               <img 
                 src={ug4} 
