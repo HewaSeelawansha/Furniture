@@ -158,7 +158,7 @@ function RoomDesigner() {
                     type="number"
                     min="1"
                     max="20"
-                    step="0.1"
+                    step="0.5"
                     className="w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500"
                     value={roomConfig.width}
                     onChange={(e) => setRoomConfig({
@@ -174,7 +174,7 @@ function RoomDesigner() {
                     type="number"
                     min="1"
                     max="20"
-                    step="0.1"
+                    step="0.5"
                     className="w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500"
                     value={roomConfig.height}
                     onChange={(e) => setRoomConfig({
@@ -226,8 +226,9 @@ function RoomDesigner() {
                   <label className="block text-sm font-medium text-gray-700 mb-1">Width (m)</label>
                   <input
                     type="number"
-                    min="0.1"
-                    step="0.1"
+                    min="1"
+                    max="20"
+                    step="0.5"
                     className="w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500"
                     value={newFurniture.width}
                     onChange={(e) => setNewFurniture({
@@ -241,8 +242,9 @@ function RoomDesigner() {
                   <label className="block text-sm font-medium text-gray-700 mb-1">Height (m)</label>
                   <input
                     type="number"
-                    min="0.1"
-                    step="0.1"
+                    min="1"
+                    max="20"
+                    step="0.5"
                     className="w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500"
                     value={newFurniture.height}
                     onChange={(e) => setNewFurniture({
