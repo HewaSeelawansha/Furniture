@@ -11,7 +11,7 @@ const postRegister = async (req, res) => {
             return res.status(409)
                 .json({ message:'Already exists', success: false})
         }
-        const userModel = new User({name, email, password, photoURL, bio});
+        const userModel = new User({name, email, password});
         userModel.password = await bcrypt.hash(password, 10);
         await userModel.save();
         res.status(201).json({message:"Registered successfully", success: true});

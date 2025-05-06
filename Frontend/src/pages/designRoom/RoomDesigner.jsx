@@ -156,9 +156,9 @@ function RoomDesigner() {
                   <label className="block text-sm font-medium text-gray-700 mb-1">Width (meters)</label>
                   <input
                     type="number"
-                    min="1"
+                    min="4"
                     max="20"
-                    step="0.5"
+                    step="1"
                     className="w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500"
                     value={roomConfig.width}
                     onChange={(e) => setRoomConfig({
@@ -172,9 +172,9 @@ function RoomDesigner() {
                   <label className="block text-sm font-medium text-gray-700 mb-1">Height (meters)</label>
                   <input
                     type="number"
-                    min="1"
+                    min="4"
                     max="20"
-                    step="0.5"
+                    step="1"
                     className="w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500"
                     value={roomConfig.height}
                     onChange={(e) => setRoomConfig({
@@ -227,13 +227,13 @@ function RoomDesigner() {
                   <input
                     type="number"
                     min="1"
-                    max="20"
-                    step="0.5"
+                    max="5"
+                    step="1"
                     className="w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500"
                     value={newFurniture.width}
                     onChange={(e) => setNewFurniture({
                       ...newFurniture,
-                      width: parseFloat(e.target.value) || 0
+                      width: Math.max(1, Math.min(5, parseFloat(e.target.value) || 1))
                     })}
                   />
                 </div>
@@ -243,13 +243,13 @@ function RoomDesigner() {
                   <input
                     type="number"
                     min="1"
-                    max="20"
-                    step="0.5"
+                    max="5"
+                    step="1"
                     className="w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500"
                     value={newFurniture.height}
                     onChange={(e) => setNewFurniture({
                       ...newFurniture,
-                      height: parseFloat(e.target.value) || 0
+                      height: Math.max(1, Math.min(5, parseFloat(e.target.value) || 1))
                     })}
                   />
                 </div>
