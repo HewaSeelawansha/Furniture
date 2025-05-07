@@ -5,7 +5,6 @@ import { Suspense, useState, useEffect, useMemo, useRef } from 'react';
 import { ErrorBoundary } from 'react-error-boundary';
 import * as THREE from 'three';
 import jsPDF from 'jspdf';
-import html2canvas from 'html2canvas';
 
 function ErrorFallback({ error, resetErrorBoundary }) {
   return (
@@ -119,21 +118,6 @@ function Room3D({ room, furniture = [], onBack }) {
         furniture: { ...prev.furniture, [selectedItem]: color }
       }));
     }
-  };
-
-  const applyColors = () => {
-    const updatedRoom = { 
-      ...room, 
-      color: tempColors.walls,
-    };
-    
-    const updatedFurniture = furniture.map((item, index) => ({
-      ...item,
-      color: tempColors.furniture[index] || item.color
-    }));
-    
-    onBack({ ...updatedRoom, furniture: updatedFurniture });
-    setShowColorEditor(false);
   };
 
   useEffect(() => {
